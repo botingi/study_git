@@ -55,5 +55,18 @@ git branch [branch name]
 git checkout [branch name]
 --> branch를 변경함. (현재 [git directory] 내용 그대로 [working directory]로 복사)
 
+git log --branches --decorate --graph (--oneline)
+--> 모든 branch의 log를 나타낼 수 있음
+
+git log [branch1]..[branch2]
+--> [branch1]에서는 생략된 [branch2]에서 생성한 commit을 확인할 수 있다.
+
+git difftool [branch1]..[branch2]
+--> [branch1]에서 수정되지 않은 [branch2]에서 추가된 code를 비교해서 확인할 수 있다.
+
+
+
+
+
 
 
