@@ -67,6 +67,25 @@ git difftool [branch1]..[branch2]
 git merge [branch2]
 --> 현재 branch1을 접근 중일때, branch2의 수정된 내용을 병합할 수 있다.
 
+----------------------------------------------------------------------------------------------------
+
+Git-hub에 UPLOAD하기
+--> git-hub에 연결하는 방법은 두 가지가 있다.
+    1. 바로 git-hub 저장소에 내 local directory를 연결하여 바로 upload하는 방법
+    2. local저장소에서 작업을 한 후 git-hub저장소에 upload하는 방법 (*)
+
+git remote add origin [git-hub repository address]
+--> [git-hub repository]와 local directory를 연결해준다. origin은 해당 git-hub repository의 alias라고
+    생각하면 된다. (git remote -v 명령어를 사용하여 repository와 연결된 alias들을 확인할 수 있다.)
+
+git push -u origin main
+--> main branch로 git-hub 저장소와 내 local directory를 연결하여 upload해준다.
+    (git-hub에서는 기본 default branch name을 master-->main으로 바꿔서 사용하고 있다.)
+    (따라서, git branch -M main 명령어로 main이라는 새로운 branch이름을 명명해준다.)
+    (With a -m or -M option, <oldbranch> will be renamed to <newbranch>. 
+    If <oldbranch> had a corresponding reflog, it is renamed to match <newbranch>, 
+    and a reflog entry is created to remember the branch renaming. If <newbranch> exists, 
+    -M must be used to force the rename to happen. - http://git-scm.com/docs/git-branch)
 
 
 
