@@ -43,3 +43,17 @@ git commit
 --> commit 시 message는 -m명령어를 통해서 간단하게 바로 입력할 수 있다.
     -m 명령어가 없다면 해당 git project에서 생성된 .git 폴더 내 COMMIT_EDITMSG를 수정하여 message를 남길 수 있다.
 
+----------------------------------------------------------------------------------------------------
+
+Branch 기능
+--> 하나의 파일을 여러명의 개발자들이 동시 수정이 이루어질때, 각각의 수정된 ver.을 나눠서 작업을 한다. 그리고 수정이 완료된 후 
+    두 사람이 수정한 파일 두개를 합쳐야 한다. 이런 상황에서 유용한 기능이 Git의 branch 기능이다.
+
+git branch [branch name]
+--> 새로운 branch를 생성할 수 있다. (git을 생성하는 순간 기본 branch는 master)
+
+git checkout [branch name]
+--> branch를 변경함. (현재 [git directory] 내용 그대로 [working directory]로 복사)
+
+
+
