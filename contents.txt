@@ -64,6 +64,9 @@ git log [branch1]..[branch2]
 git difftool [branch1]..[branch2]
 --> [branch1]에서 수정되지 않은 [branch2]에서 추가된 code를 비교해서 확인할 수 있다.
 
+git merge [branch2]
+--> 현재 branch1을 접근 중일때, branch2의 수정된 내용을 병합할 수 있다.
+
 
 
 
