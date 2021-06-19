@@ -1,0 +1,40 @@
+git config --global core.autocrlf input
+--> OS마다 줄바꿈에 다른 문자열이 입력됨 (ex. windows - /r/n, mac - /n)
+    따라서 서로 다른 OS에서 Git에 접근한다면 줄바꿈 문자열로 수정되지 않은 내용들도 
+    수정으로 확인되거나 하는 오류가 발생할 수 있다.
+    (windows) git config -- global core.autocrlf true 명령어를 입력하게 된다면 
+    commit할때, pull할때 /r 문자열을 모두 삭제한다.
+    (mac) 반대로 위와 같이 git config --global core.autocrlf input 명령어를 입력한다면
+    commit할때만 /r 문자열을 삭제(email이나 다른 문서에서 가져온 /r문자열이 있을 수 있으므로)
+
+
+git init
+--> git 저장소에 등록할 directory위치에서 해당 명령어를 사용함
+    사용한 directory에 git에 관련된 파일들이 자동으로 설치됨
+    (git 관련 파일들을 삭제하여 git project에서 제거하고 싶다면 rm -rf .git)
+
+Git Workflow
+--> Git에서는 [working directory]-[staging area]-[git directory] 세가지의 작업환경으로 나뉜다.
+                (수정) ----------> (이동) ----------->(commit)
+                (내려받기) <------------------------- (check out)
+    다음과 같은 작업은 git history인 local에만 저장되기 때문에 별도의 git server(ex. git hub)에 저장을 하게된다.
+             [git directory] --------------> [git server(remote)]
+                                  (push)
+                             <--------------
+                                  (pull)
+
+git add [file]
+--> [working directory]에서는 untracked file / tracked file로 나뉜다.
+                            그리고 tracked file은 modified/unmodified로 나뉜다.
+    git add 명령어를 사용하여 git에서 해당 파일을 tracking할 수 있게 하고, modified file은
+    [working directory]에서 [staging area]로 이동하게 된다.
+    
+git rm --cached [file]
+--> [staging area]에 올라간 파일들을 다시 [working directory]로 이동할 수 있다.
+
+echo [file(ex. *.log)] > .gitignore
+--> git에서 tracking하는 것을 원치 않는 파일들은 다음 명령어로 제외할 수 있다.
+
+git diff / git difftool
+--> git diff 명령어는 terminal 내에서 modified file의 내용을 확인할 수 있다.
+    git diff는 config file을 통해 tool을 vscode로 설정한다면, vscode에서 diff내용을 확인할 수 있다.
